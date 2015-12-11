@@ -3,7 +3,9 @@
 
 import UIKit
 
-let MATTERM_TOKEN = "MMTOKEN"
+//let MATTERM_TOKEN = "MMTOKEN"
+let MATTERM_TOKEN = "MMSID"
+let ZBOX_CHAT_URL = "https://chat.zboxapp.com/zboxapp-com"
 let DEVICE_TOKEN = "DeviceToken"
 let CURRENT_USER = "CurrentUser"
 let CURRENT_USER_EMAIL = "CurrentUserEmail"

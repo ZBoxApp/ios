@@ -57,12 +57,14 @@ public class MattermostApi: NSObject {
     }
     
     func login(email: String, password: String) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let teamName = defaults.stringForKey(CURRENT_TEAM_NAME)
-        var json :JSON = ["name":teamName!]
+//        let defaults = NSUserDefaults.standardUserDefaults()
+        //let teamName = defaults.stringForKey(CURRENT_TEAM_NAME)
+        var json :JSON = ["name":"asdasd"]
+        
         json["email"] = JSON(email)
         json["password"] = JSON(password)
         json["device_id"] = JSON("apple:" + Utils.getProp(DEVICE_TOKEN))
+        json["zbox"] = JSON("true")
         let connection = doPost("/api/v1/users/login", data: json)
         connection.start()
     }

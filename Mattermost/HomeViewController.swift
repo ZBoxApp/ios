@@ -43,9 +43,10 @@ class HomeViewController: UIViewController, UIWebViewDelegate  {
         activityIndicator.startAnimating()
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        let teamName = defaults.stringForKey(CURRENT_TEAM_NAME)
+//        let teamName = defaults.stringForKey(CURRENT_TEAM_NAME)
         currentUrl = defaults.stringForKey(CURRENT_URL)!
-        let fullUrl = currentUrl + "/" + teamName! + "/channels/town-square"
+//        let fullUrl = currentUrl + "/" + teamName! + "/channels/town-square"
+        let fullUrl = currentUrl + "/"
         
         if (!force) {
             if let webViewUrl = webView.request?.URL!.absoluteString {

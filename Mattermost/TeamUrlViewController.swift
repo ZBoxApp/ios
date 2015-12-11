@@ -22,14 +22,16 @@ class TeamUrlViewController: UIViewController, UITextFieldDelegate, MattermostAp
     func doNext() {
         Utils.setTeamUrl(urlField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).lowercaseString)
         api.initBaseUrl();
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let teamName = defaults.stringForKey(CURRENT_TEAM_NAME)
-        api.findTeamByName(teamName!)
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        let teamName = defaults.stringForKey(CURRENT_TEAM_NAME)
+//        api.findTeamByName(teamName!)
+        self.performSegueWithIdentifier("email_pwd_controller", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         urlField.delegate = self
+        urlField.text = (ZBOX_CHAT_URL)
         api.delegate = self
         
         proceedButton.layer.borderColor = proceedButton.titleLabel?.textColor.CGColor
